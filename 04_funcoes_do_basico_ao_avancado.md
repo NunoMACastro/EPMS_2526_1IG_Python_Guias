@@ -650,6 +650,16 @@ Cria uma função `ola_mundo` que não recebe parâmetros e:
 
 Depois, chama essa função pelo menos duas vezes.
 
+> Resolução
+
+```python
+def ola_mundo():
+    print("Olá, Mundo!")
+
+ola_mundo()
+ola_mundo()
+```
+
 ---
 
 ### Exercício 2 - Soma de dois números
@@ -661,6 +671,19 @@ Cria uma função `soma(a, b)` que:
 -   não faz `print` dentro da função.
 
 No programa principal, pede dois números ao utilizador, chama a função e mostra o resultado.
+
+> Resolução
+
+```python
+def soma(a, b):
+    return a + b
+
+num1 = float(input("Escreve o primeiro número: "))
+num2 = float(input("Escreve o segundo número: "))
+
+resultado = soma(num1, num2)
+print(f"A soma de {num1} e {num2} é {resultado}.")
+```
 
 ---
 
@@ -675,6 +698,17 @@ No programa principal, pede o nome ao utilizador e mostra:
 
 ```text
 O nome <nome> tem <n> letras.
+```
+
+> Resolução
+
+```python
+def contar_letras(nome):
+    return len(nome)
+
+nome_usuario = input("Escreve o teu nome: ")
+num_letras = contar_letras(nome_usuario)
+print(f"O nome {nome_usuario} tem {num_letras} letras.")
 ```
 
 ---
@@ -692,6 +726,24 @@ No programa principal, cria uma lista de números (por exemplo, de 1 a 10) e mos
 Números pares: X, números ímpares: Y
 ```
 
+> Resolução
+
+```python
+def contar_pares_impares(lista_numeros):
+    pares = 0
+    impares = 0
+    for num in lista_numeros:
+        if num % 2 == 0:
+            pares += 1
+        else:
+            impares += 1
+    return pares, impares
+
+numeros = list(range(1, 11))  # Números de 1 a 10
+num_pares, num_impares = contar_pares_impares(numeros)
+print(f"Números pares: {num_pares}, números ímpares: {num_impares}")
+```
+
 ---
 
 ### Exercício 5 - Média de uma lista de números
@@ -703,6 +755,21 @@ Cria uma função `calcular_media(lista_numeros)` que:
 -   se a lista estiver vazia, devolve 0 (para evitar divisão por zero).
 
 Testa a função com diferentes listas (incluindo uma lista vazia).
+
+> Resolução
+
+```python
+
+def calcular_media(lista_numeros):
+    if not lista_numeros:
+        return 0.0
+    return sum(lista_numeros) / len(lista_numeros)
+
+# Testes
+print(calcular_media([10, 20, 30]))  # 20.0
+print(calcular_media([]))             # 0.0
+print(calcular_media([5, 15]))        # 10.0
+```
 
 ---
 
@@ -718,6 +785,23 @@ No programa principal, pede `n` ao utilizador, verifica se é positivo e:
 -   se for, mostra o somatório;
 -   se não, mostra uma mensagem de erro.
 
+> Resolução
+
+```python
+def somatorio(n):
+    soma = 0
+    for i in range(1, n + 1):
+        soma += i
+    return soma
+
+n = int(input("Escreve um número inteiro positivo: "))
+if n > 0:
+    resultado = somatorio(n)
+    print(f"O somatório de 1 até {n} é {resultado}.")
+else:
+    print("Erro: o número deve ser positivo.")
+```
+
 ---
 
 ### Exercício 7 - String mais longa
@@ -730,9 +814,158 @@ Cria uma função `string_mais_longa(lista_strings)` que:
 
 Testa a função com várias listas (por exemplo, nomes de cidades, jogadores, etc.).
 
+> Resolução
+
+```python
+def string_mais_longa(lista_strings):
+    if not lista_strings: # Lista vazia
+        return None
+
+    # Se chegar aqui, a lista não está vazia uma vez que o if anterior falhou e o return não foi executado
+    mais_longa = lista_strings[0]
+    for s in lista_strings:
+        if len(s) > len(mais_longa):
+            mais_longa = s
+    return mais_longa
+
+# Testes
+print(string_mais_longa(["Lisboa", "Porto", "Faro"]))  # "Lisboa"
+print(string_mais_longa(["Ana", "Bruno", "Carla"]))    # "Bruno"
+print(string_mais_longa([]))                             # None
+```
+
 ---
 
-### Exercício 8 - Função que calcula o quadrado de um número
+### Exercício 8 - Contar alunos por turma (dicionário simples + função)
+
+Cria um dicionário `turmas` em que:
+
+-   as chaves são nomes de turmas (ex.: `"10A"`, `"10B"`),
+-   os valores são listas de nomes de alunos.
+
+Depois, cria uma função `contar_alunos_por_turma(turmas)` que:
+
+-   recebe este dicionário,
+-   devolve um **novo dicionário** em que:
+    -   as chaves são as mesmas turmas,
+    -   os valores são o número de alunos em cada turma.
+
+No programa principal, mostra algo do género:
+
+```text
+Turma 10A: 3 alunos
+Turma 10B: 4 alunos
+```
+
+> Resolução
+
+```python
+def contar_alunos_por_turma(turmas):
+    contagem = {}
+    for turma, alunos in turmas.items():
+        contagem[turma] = len(alunos)
+    return contagem
+
+turmas = {
+    "10A": ["Ana", "Bruno", "Carla"],
+    "10B": ["Diogo", "Eva", "Fábio", "Guida"]
+}
+
+contagem = contar_alunos_por_turma(turmas)
+for turma, num_alunos in contagem.items():
+    print(f"Turma {turma}: {num_alunos} alunos")
+```
+
+---
+
+### Exercício 9 - Encontrar a pessoa mais velha
+
+Cria uma função `mais_velho(pessoas)` que recebe um dicionário do tipo:
+
+```python
+pessoas = {
+    "Ana": 16,
+    "Bruno": 17,
+    "Carla": 15
+}
+```
+
+A função deve:
+
+-   devolver o nome da pessoa mais velha,
+-   se houver mais do que uma pessoa com a idade máxima, podes devolver uma delas (não faz mal).
+
+Testa a função com diferentes dicionários.
+
+> Resolução
+
+````python
+def mais_velho(pessoas):
+    nome_mais_velho = None
+    idade_mais_velha = -1
+    for nome, idade in pessoas.items():
+        if idade > idade_mais_velha:
+            idade_mais_velha = idade
+            nome_mais_velho = nome
+    return nome_mais_velho
+
+# Testes
+pessoas1 = {"Ana": 16, "Bruno": 17, "Carla": 15}
+print(mais_velho(pessoas1))  # "Bruno"
+
+---
+
+### Exercício 10 - Média por aluno (função + dicionário aninhado)
+
+Usa um dicionário semelhante a este:
+
+```python
+turma = {
+    "alunos": [
+        {"nome": "Ana", "notas": {"Matemática": 18, "Português": 16}},
+        {"nome": "Bruno", "notas": {"Matemática": 14, "Português": 15}},
+        {"nome": "Carla", "notas": {"Matemática": 12, "Português": 14}}
+    ]
+}
+````
+
+Cria uma função `media_aluno(aluno)` que:
+
+-   recebe um dicionário com `"nome"` e `"notas"` que é outro dicionário com as disciplinas e respetivas notas,
+-   devolve a média das notas desse aluno.
+
+Depois, no programa principal, percorre a lista de alunos em `turma["alunos"]` e mostra:
+
+```text
+Ana -> média: X
+Bruno -> média: Y
+Carla -> média: Z
+```
+
+> Resolução
+
+```python
+def media_aluno(aluno):
+    notas = aluno["notas"].values()
+    return sum(notas) / len(notas)
+
+turma = {
+    "alunos": [
+        {"nome": "Ana", "notas": {"Matemática": 18, "Português": 16}},
+        {"nome": "Bruno", "notas": {"Matemática": 14, "Português": 15}},
+        {"nome": "Carla", "notas": {"Matemática": 12, "Português": 14}}
+    ]
+}
+
+for aluno in turma["alunos"]:
+    nome = aluno["nome"]
+    media = media_aluno(aluno)
+    print(f"{nome} -> média: {media:.2f}")
+```
+
+---
+
+### Exercício 11 - Função que calcula o quadrado de um número
 
 Cria uma função `quadrado(n)` que:
 
@@ -745,9 +978,20 @@ No programa principal:
 2. Chama a função;
 3. Mostra o resultado ao utilizador.
 
+> Resolução
+
+```python
+def quadrado(n):
+    return n ** 2
+
+num = float(input("Escreve um número: "))
+resultado = quadrado(num)
+print(f"O quadrado de {num} é {resultado}.")
+```
+
 ---
 
-### Exercício 9 - Função que diz se um número é par
+### Exercício 12 - Função que diz se um número é par
 
 Cria uma função `eh_par(n)` que:
 
@@ -761,9 +1005,21 @@ No programa principal:
 2. Chama `eh_par(n)` e guarda o resultado;
 3. Se o resultado for `True`, imprime `"O número é par."`, senão `"O número é ímpar."`.
 
+> Resolução
+
+```python
+def eh_par(n):
+    return n % 2 == 0
+num = int(input("Escreve um número inteiro: "))
+if eh_par(num):
+    print("O número é par.")
+else:
+    print("O número é ímpar.")
+```
+
 ---
 
-### Exercício 10 - Função com dois parâmetros: maior de dois números
+### Exercício 13 - Função com dois parâmetros: maior de dois números
 
 Cria uma função `maior(a, b)` que:
 
@@ -776,9 +1032,24 @@ No programa principal:
 2. Chama a função;
 3. Mostra a frase: `"O maior número é: <resultado>"`.
 
+> Resolução
+
+```python
+def maior(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+num1 = float(input("Escreve o primeiro número: "))
+num2 = float(input("Escreve o segundo número: "))
+resultado = maior(num1, num2)
+print(f"O maior número é: {resultado}")
+```
+
 ---
 
-### Exercício 11 - Filtrar aprovados a partir de um dicionário
+### Exercício 14 - Filtrar aprovados a partir de um dicionário
 
 Imagina um dicionário `notas` do tipo:
 
@@ -806,7 +1077,7 @@ Reprovados: ['Bruno', 'Diogo']
 
 ---
 
-### Exercício 12 - Função que devolve vários valores
+### Exercício 15 - Função que devolve vários valores
 
 Cria uma função `estatisticas_numeros(numeros)` que recebe uma lista de números e devolve **3 valores**:
 
@@ -830,7 +1101,7 @@ Máximo: ...
 
 ---
 
-### Exercício 13 - Mutabilidade: função que modifica uma lista recebida
+### Exercício 16 - Mutabilidade: função que modifica uma lista recebida
 
 Cria uma função adicionar_prefixo(lista_nomes, prefixo) que:
 • recebe uma lista de nomes (por exemplo ["Ana", "Bruno"]);
@@ -843,79 +1114,6 @@ No programa principal:
 -   1. Cria uma lista de nomes;
 -   2. Chama a função;
 -   3. Imprime a lista antes e depois da chamada para veres o efeito da mutabilidade.
-
----
-
-### Exercício 14 - Contar alunos por turma (dicionário simples + função)
-
-Cria um dicionário `turmas` em que:
-
--   as chaves são nomes de turmas (ex.: `"10A"`, `"10B"`),
--   os valores são listas de nomes de alunos.
-
-Depois, cria uma função `contar_alunos_por_turma(turmas)` que:
-
--   recebe este dicionário,
--   devolve um **novo dicionário** em que:
-    -   as chaves são as mesmas turmas,
-    -   os valores são o número de alunos em cada turma.
-
-No programa principal, mostra algo do género:
-
-```text
-Turma 10A: 3 alunos
-Turma 10B: 4 alunos
-```
-
----
-
-### Exercício 15 - Encontrar a pessoa mais velha
-
-Cria uma função `mais_velho(pessoas)` que recebe um dicionário do tipo:
-
-```python
-pessoas = {
-    "Ana": 16,
-    "Bruno": 17,
-    "Carla": 15
-}
-```
-
-A função deve:
-
--   devolver o nome da pessoa mais velha,
--   se houver mais do que uma pessoa com a idade máxima, podes devolver uma delas (não faz mal).
-
-Testa a função com diferentes dicionários.
-
----
-
-### Exercício 16 - Média por aluno (função + dicionário aninhado)
-
-Usa um dicionário semelhante a este:
-
-```python
-turma = {
-    "alunos": [
-        {"nome": "Ana", "notas": {"Matemática": 18, "Português": 16}},
-        {"nome": "Bruno", "notas": {"Matemática": 14, "Português": 15}},
-        {"nome": "Carla", "notas": {"Matemática": 12, "Português": 14}}
-    ]
-}
-```
-
-Cria uma função `media_aluno(aluno)` que:
-
--   recebe um dicionário com `"nome"` e `"notas"` que é outro dicionário com as disciplinas e respetivas notas,
--   devolve a média das notas desse aluno.
-
-Depois, no programa principal, percorre a lista de alunos em `turma["alunos"]` e mostra:
-
-```text
-Ana -> média: X
-Bruno -> média: Y
-Carla -> média: Z
-```
 
 ---
 
