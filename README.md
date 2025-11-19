@@ -1,4 +1,4 @@
-## Índice
+**Índice**
 
 -   [Estrutura do repositório](#estrutura-do-reposit%C3%B3rio)
 -   [`01_introducao_variaveis_tipos_strings_io.md`](#01introducaovariaveistiposstringsiomd)
@@ -9,7 +9,7 @@
 -   [Como usar estes materiais](#como-usar-estes-materiais)
 -   [Pré-requisitos e ambiente de trabalho](#pr%C3%A9-requisitos-e-ambiente-de-trabalho)
 
-# Python · 10.º Ano (Programador de Informática)
+# Python · 10.º Ano (Informática de Gestão)
 
 Materiais de apoio em formato **Markdown** para introdução à programação em Python, pensados para alunos do **10.º ano - Curso Profissional de Programador de Informática (PI)**.
 
