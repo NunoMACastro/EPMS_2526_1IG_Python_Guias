@@ -756,21 +756,6 @@ Cria uma função `calcular_media(lista_numeros)` que:
 
 Testa a função com diferentes listas (incluindo uma lista vazia).
 
-> Resolução
-
-```python
-
-def calcular_media(lista_numeros):
-    if not lista_numeros:
-        return 0.0
-    return sum(lista_numeros) / len(lista_numeros)
-
-# Testes
-print(calcular_media([10, 20, 30]))  # 20.0
-print(calcular_media([]))             # 0.0
-print(calcular_media([5, 15]))        # 10.0
-```
-
 ---
 
 ### Exercício 6 - Somatório de 1 até `n`
@@ -785,23 +770,6 @@ No programa principal, pede `n` ao utilizador, verifica se é positivo e:
 -   se for, mostra o somatório;
 -   se não, mostra uma mensagem de erro.
 
-> Resolução
-
-```python
-def somatorio(n):
-    soma = 0
-    for i in range(1, n + 1):
-        soma += i
-    return soma
-
-n = int(input("Escreve um número inteiro positivo: "))
-if n > 0:
-    resultado = somatorio(n)
-    print(f"O somatório de 1 até {n} é {resultado}.")
-else:
-    print("Erro: o número deve ser positivo.")
-```
-
 ---
 
 ### Exercício 7 - String mais longa
@@ -813,26 +781,6 @@ Cria uma função `string_mais_longa(lista_strings)` que:
 -   se a lista estiver vazia, devolve `None`.
 
 Testa a função com várias listas (por exemplo, nomes de cidades, jogadores, etc.).
-
-> Resolução
-
-```python
-def string_mais_longa(lista_strings):
-    if not lista_strings: # Lista vazia
-        return None
-
-    # Se chegar aqui, a lista não está vazia uma vez que o if anterior falhou e o return não foi executado
-    mais_longa = lista_strings[0]
-    for s in lista_strings:
-        if len(s) > len(mais_longa):
-            mais_longa = s
-    return mais_longa
-
-# Testes
-print(string_mais_longa(["Lisboa", "Porto", "Faro"]))  # "Lisboa"
-print(string_mais_longa(["Ana", "Bruno", "Carla"]))    # "Bruno"
-print(string_mais_longa([]))                             # None
-```
 
 ---
 
@@ -857,25 +805,6 @@ Turma 10A: 3 alunos
 Turma 10B: 4 alunos
 ```
 
-> Resolução
-
-```python
-def contar_alunos_por_turma(turmas):
-    contagem = {}
-    for turma, alunos in turmas.items():
-        contagem[turma] = len(alunos)
-    return contagem
-
-turmas = {
-    "10A": ["Ana", "Bruno", "Carla"],
-    "10B": ["Diogo", "Eva", "Fábio", "Guida"]
-}
-
-contagem = contar_alunos_por_turma(turmas)
-for turma, num_alunos in contagem.items():
-    print(f"Turma {turma}: {num_alunos} alunos")
-```
-
 ---
 
 ### Exercício 9 - Encontrar a pessoa mais velha
@@ -897,22 +826,6 @@ A função deve:
 
 Testa a função com diferentes dicionários.
 
-> Resolução
-
-````python
-def mais_velho(pessoas):
-    nome_mais_velho = None
-    idade_mais_velha = -1
-    for nome, idade in pessoas.items():
-        if idade > idade_mais_velha:
-            idade_mais_velha = idade
-            nome_mais_velho = nome
-    return nome_mais_velho
-
-# Testes
-pessoas1 = {"Ana": 16, "Bruno": 17, "Carla": 15}
-print(mais_velho(pessoas1))  # "Bruno"
-
 ---
 
 ### Exercício 10 - Média por aluno (função + dicionário aninhado)
@@ -927,7 +840,7 @@ turma = {
         {"nome": "Carla", "notas": {"Matemática": 12, "Português": 14}}
     ]
 }
-````
+```
 
 Cria uma função `media_aluno(aluno)` que:
 
@@ -940,27 +853,6 @@ Depois, no programa principal, percorre a lista de alunos em `turma["alunos"]` e
 Ana -> média: X
 Bruno -> média: Y
 Carla -> média: Z
-```
-
-> Resolução
-
-```python
-def media_aluno(aluno):
-    notas = aluno["notas"].values()
-    return sum(notas) / len(notas)
-
-turma = {
-    "alunos": [
-        {"nome": "Ana", "notas": {"Matemática": 18, "Português": 16}},
-        {"nome": "Bruno", "notas": {"Matemática": 14, "Português": 15}},
-        {"nome": "Carla", "notas": {"Matemática": 12, "Português": 14}}
-    ]
-}
-
-for aluno in turma["alunos"]:
-    nome = aluno["nome"]
-    media = media_aluno(aluno)
-    print(f"{nome} -> média: {media:.2f}")
 ```
 
 ---
@@ -978,17 +870,6 @@ No programa principal:
 2. Chama a função;
 3. Mostra o resultado ao utilizador.
 
-> Resolução
-
-```python
-def quadrado(n):
-    return n ** 2
-
-num = float(input("Escreve um número: "))
-resultado = quadrado(num)
-print(f"O quadrado de {num} é {resultado}.")
-```
-
 ---
 
 ### Exercício 12 - Função que diz se um número é par
@@ -1005,18 +886,6 @@ No programa principal:
 2. Chama `eh_par(n)` e guarda o resultado;
 3. Se o resultado for `True`, imprime `"O número é par."`, senão `"O número é ímpar."`.
 
-> Resolução
-
-```python
-def eh_par(n):
-    return n % 2 == 0
-num = int(input("Escreve um número inteiro: "))
-if eh_par(num):
-    print("O número é par.")
-else:
-    print("O número é ímpar.")
-```
-
 ---
 
 ### Exercício 13 - Função com dois parâmetros: maior de dois números
@@ -1031,21 +900,6 @@ No programa principal:
 1. Pede dois números ao utilizador;
 2. Chama a função;
 3. Mostra a frase: `"O maior número é: <resultado>"`.
-
-> Resolução
-
-```python
-def maior(a, b):
-    if a > b:
-        return a
-    else:
-        return b
-
-num1 = float(input("Escreve o primeiro número: "))
-num2 = float(input("Escreve o segundo número: "))
-resultado = maior(num1, num2)
-print(f"O maior número é: {resultado}")
-```
 
 ---
 
