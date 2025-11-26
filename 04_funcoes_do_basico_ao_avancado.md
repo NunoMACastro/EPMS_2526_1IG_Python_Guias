@@ -1101,6 +1101,37 @@ Mínimo: ...
 Máximo: ...
 ```
 
+> Resolução
+
+```python
+def estatisticas_numeros(numeros):
+    soma = 0
+    minimo = numeros[0]
+    maximo = numeros[0]
+    for num in numeros:
+        soma += num
+        if num < minimo:
+            minimo = num
+        if num > maximo:
+            maximo = num
+    return soma, minimo, maximo
+
+# Programa principal
+lista_numeros = [3, 7, -2, 10, 4]
+soma, minimo, maximo = estatisticas_numeros(lista_numeros)
+print(f"Soma: {soma}")
+print(f"Mínimo: {minimo}")
+print(f"Máximo: {maximo}")
+
+// Usando o min e max:
+
+def estatisticas_numeros_com_min_max(numeros):
+    soma = sum(numeros)
+    minimo = min(numeros)
+    maximo = max(numeros)
+    return soma, minimo, maximo
+```
+
 ---
 
 ### <a id="ex16"></a> Exercício 16 - Função que simula lançamento de dados
