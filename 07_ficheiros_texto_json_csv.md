@@ -500,6 +500,21 @@ Depois, escreve um programa que:
 -   verifica se o `username` e `password` correspondem a algum dos utilizadores no ficheiro;
 -   mostra uma mensagem de "Login bem-sucedido" ou "Credenciais inválidas".
 
+> Resolução:
+
+```python
+import json
+with open("utilizadores.json", "r", encoding="utf-8") as f:
+    utilizadores = json.load(f)
+username_input = input("Username: ")
+password_input = input("Password: ")
+login_sucesso = False
+for utilizador in utilizadores:
+    if (utilizador["username"] == username_input and
+            utilizador["password"] == password_input):
+        login_sucesso = True
+        break
+
 ---
 
 ### Exercício 7 - Usando funções, dicionários e JSON · [INTERMÉDIO]
@@ -567,3 +582,4 @@ Escreve um programa que:
 
 -   **2025-11-26 · v1.0**
     -   Criação inicial do ficheiro com introdução a ficheiros de texto, JSON e CSV.
+```

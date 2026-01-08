@@ -1,6 +1,7 @@
 **Índice**
 
 -   [Estrutura do repositório](#estrutura-do-reposit%C3%B3rio)
+-   [ `00_exercicios_de_preparacao`](#00_exercicios_de_preparacaomd)
 -   [`01_introducao_variaveis_tipos_strings_io.md`](#01_introducao_variaveis_tipos_strings_iomd)
 -   [`02_operadores_e_controlo_de_fluxo_if_ciclos.md`](#02_operadores_e_controlo_de_fluxo_if_ciclosmd)
 -   [`03_listas_dicionarios_estruturas_aninhadas.md`](#03_listas_dicionarios_estruturas_aninhadasmd)
@@ -9,6 +10,8 @@
 -   [`06_slicing_list_comprehensions_md`](#06_slicing_list_comprehensions_md)
 -   [`07_ficheiros_texto_json_csv.md`](#07_ficheiros_texto_json_csvmd)
 -   [`08_excecoes_e_tratamento_de_erros.md`](#08_excecoes_e_tratamento_de_errosmd)
+-   [`09_modulos_e_organizacao_de_projetos.md`](#09_modulos_e_organizacao_de_projetosmd)
+-   [`10_estruturas_e_algoritmos_classicos.md`](#10_estruturas_e_algoritmos_classicosmd)
 -   [Como usar estes materiais](#como-usar-estes-materiais)
 -   [Pré-requisitos e ambiente de trabalho](#pr%C3%A9-requisitos-e-ambiente-de-trabalho)
 
@@ -33,6 +36,7 @@ Cada ficheiro foca um conjunto de temas e termina com:
 
 ```text
 .
+├── 00_exercicios_de_preparacao.md
 ├── 01_introducao_variaveis_tipos_strings_io.md
 ├── 02_operadores_e_controlo_de_fluxo_if_ciclos.md
 ├── 03_listas_dicionarios_estruturas_aninhadas.md
@@ -41,8 +45,24 @@ Cada ficheiro foca um conjunto de temas e termina com:
 ├── 06_slicing_list_comprehensions.md
 ├── 07_ficheiros_texto_json_csv.md
 ├── 08_excecoes_e_tratamento_de_erros.md
+├── 09_modulos_e_organizacao_de_projetos.md
+├── 10_estruturas_e_algoritmos_classicos.md
 └── README.md
 ```
+
+### `00_exercicios_de_preparacao.md`
+
+[Ver ficheiro](./00_exercicios_de_preparacao.md)
+
+**Objetivo:**  
+Preparar os alunos para as avaliações, através de exercícios que envolvem os conceitos básicos de Python
+
+Conteúdos principais:
+
+-   revisão de funções (definição, parâmetros, retorno, \*args/\*\*kwargs);
+-   leitura e escrita de ficheiros JSON;
+
+---
 
 ### `01_introducao_variaveis_tipos_strings_io.md`
 
@@ -368,6 +388,51 @@ Exercícios focados em:
 -   tornar leituras de `input` mais seguras;
 -   tratar erros ao dividir, ler ficheiros, JSON e CSV;
 -   implementar pequenos menus e funções robustas com tratamento de exceções.
+
+---
+
+### `09_modulos_e_organizacao_de_projetos.md`
+
+[Ver ficheiro](./09_modulos_e_organizacao_de_projetos.md)
+
+**Objetivo:**  
+Ensinar a organizar código em vários ficheiros e reutilizar funções com `import`, preparando projetos pequenos mais limpos e fáceis de manter.
+
+Conteúdos principais:
+
+-   o que é um módulo e porque usar;
+-   diferentes formas de `import` e boas práticas;
+-   `if __name__ == "__main__":` para testes simples;
+-   separação de lógica e I/O em ficheiros diferentes;
+-   exemplo de mini projeto organizado.
+
+Exercícios focados em:
+
+-   criar módulos simples e importar funções;
+-   aplicar `as` e evitar `import *`;
+-   organizar um mini projeto com 2–3 ficheiros.
+
+---
+
+### `10_estruturas_e_algoritmos_classicos.md`
+
+[Ver ficheiro](./10_estruturas_e_algoritmos_classicos.md)
+
+**Objetivo:**  
+Introduzir pesquisa linear, ordenação básica (bubble e selection) e uma noção simples de eficiência.
+
+Conteúdos principais:
+
+-   o que são algoritmos e porque estudar;
+-   pesquisa linear com e sem índice;
+-   ordenação por bolha (bubble sort) e por seleção (selection sort);
+-   noção simples de eficiência e comparação de passos.
+
+Exercícios focados em:
+
+-   implementar pesquisa linear e contagem de passos;
+-   ordenar listas com bubble/selection sort;
+-   aplicar ordenação e pesquisa em listas de números e nomes.
 
 ---
 
