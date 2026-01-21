@@ -1,4 +1,4 @@
-# IG/Tuts
+# Material de Apoio - Informática de Gestão
 
 Materiais de apoio para aulas de Informática de Gestão (10.º ano). O repositório
 está dividido em duas áreas principais: Python e Git.
