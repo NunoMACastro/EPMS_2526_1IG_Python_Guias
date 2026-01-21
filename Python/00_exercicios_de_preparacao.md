@@ -11,15 +11,103 @@
 
 1. Lê dois números inteiros com `input()`, converte para `int` e imprime a soma, a diferença, o produto, a divisão inteira e o resto.
 
+> Resolução:
+
+```python
+num1 = int(input("Introduz o primeiro número inteiro: "))
+num2 = int(input("Introduz o segundo número inteiro: "))
+
+soma = num1 + num2
+diferenca = num1 - num2
+produto = num1 * num2
+divisao_inteira = num1 // num2
+resto = num1 % num2
+
+print(f"Soma: {soma}")
+print(f"Diferença: {diferenca}")
+print(f"Produto: {produto}")
+print(f"Divisão Inteira: {divisao_inteira}")
+print(f"Resto: {resto}")
+```
+
 2. Lê uma temperatura em Celsius (`float`) e converte para Fahrenheit. A conversão é dada por: `F = C * 9/5 + 32`. Imprime o resultado.
+
+> Resolução:
+
+```python
+celsius = float(input("Introduz a temperatura em Celsius: "))
+fahrenheit = celsius * 9/5 + 32
+print(f"Temperatura em Fahrenheit: {fahrenheit}")
+```
 
 3. Pede ao utilizador o nome e a idade. Imprime uma frase de boas-vindas e indica se é maior de idade.
 
+> Resolução:
+
+```python
+nome = input("Introduz o teu nome: ")
+idade = int(input("Introduz a tua idade: "))
+if idade >= 18:
+    status = "maior de idade"
+else:
+    status = "menor de idade"
+
+print(f"Bem-vindo, {nome}! És {status}.")
+```
+
 4. Lê um número inteiro `N` e imprime todos os números pares entre 0 e `N` (inclusive), um por linha.
+
+> Resolução:
+
+```python
+N = int(input("Introduz um número inteiro N: "))
+
+for i in range(0, N + 1, 2):
+    print(i)
+
+# ou usando condição
+
+for i in range(N + 1):
+    if i % 2 == 0:
+        print(i)
+```
 
 5. Lê 5 notas (0-20), guarda numa lista, calcula a média e indica quantas negativas existem.
 
+> Resolução:
+
+```python
+notas = []
+
+for i in range(5):
+    nota = float(input(f"Introduz a nota {i + 1} (0-20): "))
+    notas.append(nota)
+
+media = sum(notas) / len(notas)
+negativas = 0
+
+for nota in notas:
+    if nota < 10:
+        negativas += 1
+
+print(f"Média: {media}")
+print(f"Número de negativas: {negativas}")
+```
+
 6. Cria um dicionário para representar um aluno com as chaves `nome`, `turma` e `notas` (lista com 3 valores). Calcula e imprime a média desse aluno.
+
+> Resolução:
+
+```python
+aluno = {
+    "nome": input("Introduz o nome do aluno: "),
+    "turma": input("Introduz a turma do aluno: "),
+    "notas": [10, 15, 17, 12]  # Exemplo de notas
+}
+
+media = sum(aluno["notas"]) / len(aluno["notas"])
+print(f"Média do aluno {aluno['nome']}: {media}")
+```
 
 ---
 
@@ -27,9 +115,52 @@
 
 7. Escreve uma função chamada `saudacao` que recebe um nome como parâmetro e imprime uma mensagem de saudação personalizada.
 
+> Resolução:
+
+```python
+def saudacao(nome):
+    print(f"Olá, {nome}! Bem-vindo!")
+
+saudacao("Ana")
+```
+
 8. Escreve uma função para cada uma das operações matemáticas básicas (adição, subtração, multiplicação, divisão) que recebe dois números como parâmetros e imprime o resultado da operação.
 
+> Resolução:
+
+```python
+def adicionar(a, b):
+    print(f"Soma: {a + b}")
+
+def subtrair(a, b):
+    print(f"Subtração: {a - b}")
+
+def multiplicar(a, b):
+    print(f"Multiplicação: {a * b}")
+
+def dividir(a, b):
+    if b != 0:
+        print(f"Divisão: {a / b}")
+    else:
+        print("Erro: Divisão por zero não é permitida.")
+
+adicionar(5, 3)
+subtrair(5, 3)
+multiplicar(5, 3)
+dividir(5, 0)
+```
+
 9. Cria uma função que calcule a área de um retângulo. A função deve receber a largura e a altura como parâmetros e imprimir a área.
+
+> Resolução:
+
+```python
+def area_retangulo(largura, altura):
+    area = largura * altura
+    print(f"Área do retângulo: {area}")
+
+area_retangulo(5, 10)
+```
 
 10. Escreve uma função que receba uma lista de números e imprima cada número multiplicado por 2.
 
