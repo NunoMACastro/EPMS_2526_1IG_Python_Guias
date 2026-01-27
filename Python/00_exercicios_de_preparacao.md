@@ -172,15 +172,69 @@ area_retangulo(5, 10)
 
 12. Cria uma função que receba uma lista de números e retorne a soma de todos os números pares na lista.
 
+> Resolução:
+
+```python
+def soma_pares(numeros):
+    soma = 0
+    for num in numeros:
+        if num % 2 == 0:
+            soma += num
+    return soma
+numeros = [1, 2, 3, 4, 5, 6]
+resultado = soma_pares(numeros)
+print(f"Soma dos números pares: {resultado}")
+```
+
 13. Escreve uma função que receba uma string e retorne o número de vogais na string.
 
 14. Cria uma função que receba uma lista de palavras e retorne a palavra mais longa da lista.
+
+> Resolução:
+
+```python
+def palavra_mais_longa(palavras):
+    mais_longa = ""
+    for palavra in palavras:
+        if len(palavra) > len(mais_longa):
+            mais_longa = palavra
+    return mais_longa
+
+palavras = ["casa", "computador", "programação", "python"]
+resultado = palavra_mais_longa(palavras)
+print(f"A palavra mais longa é: {resultado}")
+```
 
 15. Escreve uma função que recebe dois parâmetros: uma lista de números e um número. A função deve retornar `True` se o número estiver na lista e `False` caso contrário.
 
 16. Cria uma função que recebe um dicionário e o mostre de forma organizada.
 
 17. Cria uma função que receba uma lista de dicionários (cada dicionário representa uma pessoa com nome e idade) e retorne a média das idades.
+
+> Resolução
+
+```python
+
+pessoas = [
+    {
+        "nome" : "Nunão",
+        "idade" : 30
+    },
+    {
+        "nome" : "Nuninho",
+        "idade" : 16
+    }
+]
+
+def media_idades(lista_pessoas):
+    total_idade = 0
+    for pessoa in lista_pessoas:
+        total_idade += pessoa["idade"]
+    return total_idade / len(lista_pessoas)
+
+resultado = media_idades(pessoas)
+print(f"Média das idades: {resultado}")
+```
 
 18. Considera um dicionário com o seguinte formato:
 
@@ -207,6 +261,52 @@ Cria funções para:
 - Calcular a média das notas de um aluno.
 - Calcular o total de faltas de um aluno.
 - Mostrar todos os alunos de forma organizada.
+
+> Resolução:
+
+```python
+alunos = {
+    1 : {
+        "nome": "Ana",
+        "notas": {
+            "Matemática": 18,
+            "Física": 16,
+            "Química": 17
+        },
+        "faltas": {
+            "Matemática": 2,
+            "Física": 0,
+            "Química": 1
+        }
+    },
+    2 : {
+        "nome": "Bruno",
+        "notas": {
+            "Matemática": 14,
+            "Física": 12,
+            "Química": 15
+        },
+        "faltas": {
+            "Matemática": 1,
+            "Física": 3,
+            "Química": 0
+        }
+    }
+}
+
+def calcular_media(aluno):
+    notas = aluno["notas"].values()
+    return sum(notas) / len(notas)
+
+def total_faltas(aluno):
+    return sum(aluno["faltas"].values())
+
+def mostrar_alunos(alunos):
+    for id, aluno in alunos.items():
+        print(f"ID: {id}, Nome: {aluno['nome']}, Média: {calcular_media(aluno)}, Total de Faltas: {total_faltas(aluno)}")
+
+mostrar_alunos(alunos)
+```
 
 ---
 
