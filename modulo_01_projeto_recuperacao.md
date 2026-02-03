@@ -2,10 +2,10 @@
 
 Realiza um trabalho de investigação, no formato que quiseres (powerpoint, word, à mão, etc) sobre o que é:
 
-1 - Algoritmia
-2 - Pseudocódigo
-3 - O que é programação
-4 - O que é um IDE
+- 1 - Algoritmia
+- 2 - Pseudocódigo
+- 3 - O que é programação
+- 4 - O que é um IDE
 
 O trabalho, depois de terminado, deve ser enviado por e-mail para o professor. nucastro@epms.pt.
 
