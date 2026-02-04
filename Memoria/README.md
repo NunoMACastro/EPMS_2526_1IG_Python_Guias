@@ -17,6 +17,7 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 - [`03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`](#03_gestao_de_memoria_em_python_referencias_mutabilidade_gcmd)
 - [`04_heap_stack_frames_e_execucao_python.md`](#04_heap_stack_frames_e_execucao_pythonmd)
 - [`05_estruturas_dinamicas_e_complexidade.md`](#05_estruturas_dinamicas_e_complexidademd)
+- [`06_do_codigo_a_execucao_real_so_cpu_isa.md`](#06_do_codigo_a_execucao_real_so_cpu_isamd)
 - [Rota de estudo recomendada](#rota-de-estudo-recomendada)
 
 ---
@@ -69,6 +70,12 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 
 ---
 
+### `06_do_codigo_a_execucao_real_so_cpu_isa.md`
+
+**Objetivo:** ligar tudo numa visão de sistema: do código-fonte até à execução real no CPU, com papel do sistema operativo, loader, processo/thread, ISA e ciclo de vida de ficheiros.
+
+---
+
 ## Rota de estudo recomendada
 
 1. `00_fundamentos_hardware_bits_cpu_memoria.md`
@@ -77,6 +84,7 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 4. `03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`
 5. `04_heap_stack_frames_e_execucao_python.md`
 6. `05_estruturas_dinamicas_e_complexidade.md`
+7. `06_do_codigo_a_execucao_real_so_cpu_isa.md`
 
 ---
 
@@ -84,3 +92,4 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 
 - **2026-02-04**: Criação inicial da pasta `Memoria` com guia de estudo e 5 módulos.
 - **2026-02-04**: Adicionado módulo `00` de fundamentos (hardware, CPU, RAM, endereços).
+- **2026-02-04**: Adicionado módulo `06` com a visão completa de execução real (SO, CPU, ISA e ficheiros).

@@ -22,19 +22,19 @@ t_upper = s.upper()
 msg = f"{s} -> {n_int} / {n_float:.2f}"
 ```
 
--   `type(valor)` para confirmar o tipo.
--   `bool(...)` interpreta `0`, `""`, `[]`, `{}`, `None` como `False`.
+- `type(valor)` para confirmar o tipo.
+- `bool(...)` interpreta `0`, `""`, `[]`, `{}`, `None` como `False`.
 
 ---
 
 ## 2) Operadores essenciais
 
--   **Aritméticos**: `+ - * / // % **`
--   **Comparação**: `== != > >= < <=`
--   **Lógicos**: `and`, `or`, `not`
--   **Pertinência**: `item in seq`, `item not in seq`
--   **Identidade**: `is`, `is not` (especialmente com `None`)
--   **Atribuições compostas**: `+=`, `-=`, `*=`, ...
+- **Aritméticos**: `+ - * / // % **`
+- **Comparação**: `== != > >= < <=`
+- **Lógicos**: `and`, `or`, `not`
+- **Pertinência**: `item in seq`, `item not in seq`
+- **Identidade**: `is`, `is not` (especialmente com `None`)
+- **Atribuições compostas**: `+=`, `-=`, `*=`, ...
 
 Lembra-te de encadear comparações: `1 < x <= 10`.
 
@@ -89,8 +89,8 @@ while valor < 0 or valor > 20:
     valor = int(input("0-20: "))
 ```
 
--   Ideal para repetir até uma condição deixar de ser verdadeira.
--   Controla variáveis de estado para evitar ciclos infinitos.
+- Ideal para repetir até uma condição deixar de ser verdadeira.
+- Controla variáveis de estado para evitar ciclos infinitos.
 
 ---
 
@@ -106,9 +106,9 @@ nums.sort()              # altera lista
 ordenada = sorted(nums)  # cópia ordenada
 ```
 
--   Índices positivos e negativos (`lista[-1]`).
--   Funções úteis: `len`, `sum`, `min`, `max`.
--   Padrões: acumulação, filtragem, transformação, procurar mínimo/máximo manualmente.
+- Índices positivos e negativos (`lista[-1]`).
+- Funções úteis: `len`, `sum`, `min`, `max`.
+- Padrões: acumulação, filtragem, transformação, procurar mínimo/máximo manualmente.
 
 ---
 
@@ -122,24 +122,24 @@ for chave, valor in pessoa.items():
     ...
 ```
 
--   Chaves normalmente `str`, valores de qualquer tipo.
--   Métodos: `keys`, `values`, `items`, `pop`.
--   Uso de `in` verifica chaves.
+- Chaves normalmente `str`, valores de qualquer tipo.
+- Métodos: `keys`, `values`, `items`, `pop`.
+- Uso de `in` verifica chaves.
 
 ---
 
 ## 8) Estruturas aninhadas e padrões (listas/dicionários)
 
--   Lista de listas (matriz): `matriz[linha][coluna]`.
--   Dicionário de listas (turma → alunos).
--   Dicionário de dicionários (aluno → disciplina → nota).
--   Lista de dicionários (coleções de registos).
+- Lista de listas (matriz): `matriz[linha][coluna]`.
+- Dicionário de listas (turma → alunos).
+- Dicionário de dicionários (aluno → disciplina → nota).
+- Lista de dicionários (coleções de registos).
 
 Padrões frequentes:
 
--   Ciclos aninhados para percorrer matrizes e coleções complexas.
--   Contagens condicionais (negativas, aprovados, etc.).
--   Procura de elementos por nome/título ignorando maiúsculas (`valor.lower()`).
+- Ciclos aninhados para percorrer matrizes e coleções complexas.
+- Contagens condicionais (negativas, aprovados, etc.).
+- Procura de elementos por nome/título ignorando maiúsculas (`valor.lower()`).
 
 ---
 
@@ -156,18 +156,26 @@ def nome_funcao(param1, param2=valor):
 valor = nome_funcao(arg1, param2=arg2)
 ```
 
--   Prefere `return` para reutilizar resultados.
--   Pode devolver múltiplos valores através de tuplos: `return quociente, resto`.
--   Parâmetros: posicionais, nomeados, valores por defeito.
+- Prefere `return` para reutilizar resultados.
+- Pode devolver múltiplos valores através de tuplos: `return quociente, resto`.
+- Parâmetros: posicionais, nomeados, valores por defeito.
 
 ---
 
 ## 10) Funções avançadas (conceitos essenciais)
 
--   `*args` e `**kwargs` para argumentos variáveis.
--   Atenção à mutabilidade: alterar listas/dicionários passados por referência; evita valores por defeito mutáveis (usa `None` + inicialização interna).
--   `lambda` e funções de ordem superior (`map`, `filter`, `sorted(key=...)`) aparecem como curiosidade; aplica somente se confortável.
--   Scope: variáveis locais vs globais (`global`, `nonlocal` apenas quando indispensável).
+- `*args` e `**kwargs` para argumentos variáveis.
+- Atenção à mutabilidade: alterar listas/dicionários passados por referência; evita valores por defeito mutáveis (usa `None` + inicialização interna).
+- `lambda` e funções de ordem superior (`map`, `filter`, `sorted(key=...)`) aparecem como curiosidade; aplica somente se confortável.
+- Scope: variáveis locais vs globais (`global`, `nonlocal` apenas quando indispensável).
+
+```python
+def soma_variavel(*args):
+    return sum(args)
+
+def perfil(**kwargs):
+    return f"{kwargs.get('nome', 'Sem nome')} ({kwargs.get('idade', '?')})"
+```
 
 ---
 
@@ -185,8 +193,8 @@ pares = [x for x in seq if x % 2 == 0]
 rotulo = ["par" if x % 2 == 0 else "ímpar" for x in seq]
 ```
 
--   Também funciona com strings (`texto[a:b]`).
--   Comprehensions substituem ciclos simples de construção de listas; evita efeitos secundários dentro delas.
+- Também funciona com strings (`texto[a:b]`).
+- Comprehensions substituem ciclos simples de construção de listas; evita efeitos secundários dentro delas.
 
 ---
 
@@ -204,8 +212,8 @@ with open("dados.txt", "r", encoding="utf-8") as f:
         ...
 ```
 
--   Modos: `"r"`, `"w"`, `"a"`.
--   `with` garante fecho automático do ficheiro.
+- Modos: `"r"`, `"w"`, `"a"`.
+- `with` garante fecho automático do ficheiro.
 
 ---
 
@@ -222,8 +230,8 @@ with open("dados.json", "r", encoding="utf-8") as f:
     info = json.load(f)
 ```
 
--   Estruturas típicas: listas de dicionários, dicionário de listas.
--   Mantém separação entre lógica (funções que tratam `info`) e I/O (funções que leem/escrevem).
+- Estruturas típicas: listas de dicionários, dicionário de listas.
+- Mantém separação entre lógica (funções que tratam `info`) e I/O (funções que leem/escrevem).
 
 ---
 
@@ -250,18 +258,90 @@ with open("alunos.csv", "r", encoding="utf-8") as f:
         ...
 ```
 
--   Atenção à conversão de tipos após `split`.
--   `newline=""` recomendado quando usares `csv` module (opcional para esta ficha).
+- Atenção à conversão de tipos após `split`.
+- `newline=""` recomendado quando usares `csv` module (opcional para esta ficha).
 
 ---
 
-## 15) Planeamento + testes rápidos (revisão `00`)
+## 15) Exceções (`try / except / raise`)
 
--   Identifica **entradas**, **processamento** e **saídas** antes de escrever código.
--   Divide problemas em funções pequenas (lógica vs interface).
--   Usa padrões aprendidos (acumulação, contagem, filtragem, transformação).
--   Valida dados antes de guardar ou escrever em ficheiros.
--   Faz testes rápidos com `assert` ou `print` temporários para confirmar cada parte.
--   Mantém registos (JSON/CSV) atualizados e consistentes ao longo da execução.
+```python
+# Validar input numérico
+while True:
+    try:
+        n = int(input("Inteiro: "))
+        break
+    except ValueError:
+        print("Valor inválido. Tenta novamente.")
+
+# Divisão protegida
+try:
+    r = a / b
+except ZeroDivisionError:
+    r = None
+
+# Ficheiro pode não existir
+try:
+    with open("dados.txt", "r", encoding="utf-8") as f:
+        conteudo = f.read()
+except FileNotFoundError:
+    conteudo = ""
+
+def raiz_quadrada_segura(x):
+    if x < 0:
+        raise ValueError("x não pode ser negativo")
+    return x ** 0.5
+```
+
+- Captura exceções específicas; evita `except:` sem tipo.
+- `try/except` para casos esperados; `raise` para sinalizar erros da tua função.
+
+---
+
+## 16) Módulos e imports
+
+```python
+# importar módulo inteiro
+import math_utils
+media = math_utils.media([10, 12, 14])
+
+# importar função específica
+from texto_utils import contar_vogais
+v = contar_vogais("programacao")
+
+# alias
+import random as rd
+n = rd.randint(1, 100)
+```
+
+- Cada ficheiro `.py` é um módulo.
+- Organiza funções reutilizáveis em módulos separados.
+- Convenção: execução principal protegida com `if __name__ == "__main__":`.
+
+---
+
+## 17) `random` (geração de valores)
+
+```python
+import random as rd
+
+nums = [rd.randint(1, 100) for _ in range(5)]
+um = rd.choice(nums)
+rd.shuffle(nums)  # altera a lista no local
+```
+
+- `randint(a, b)` inclui os extremos.
+- Útil para testes rápidos e geração de dados de exemplo.
+
+---
+
+## 18) Planeamento + testes rápidos (revisão `00`)
+
+- Identifica **entradas**, **processamento** e **saídas** antes de escrever código.
+- Divide problemas em funções pequenas (lógica vs interface).
+- Usa padrões aprendidos (acumulação, contagem, filtragem, transformação).
+- Valida dados antes de guardar ou escrever em ficheiros.
+- Faz testes rápidos com `assert` ou `print` temporários para confirmar cada parte.
+- Mantém registos (JSON/CSV) atualizados e consistentes ao longo da execução.
 
 Boa preparação!

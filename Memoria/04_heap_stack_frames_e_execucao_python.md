@@ -17,6 +17,7 @@
 - [7. Stack + Heap a trabalhar em conjunto](#7-stack--heap-a-trabalhar-em-conjunto)
 - [8. Recursão e stack overflow (conceito)](#8-recursão-e-stack-overflow-conceito)
 - [9. Erros comuns de compreensão](#9-erros-comuns-de-compreensão)
+- [9.1 Ponte para execução real do sistema](#ponte-execucao-real)
 - [10. Resumo final](#10-resumo-final)
 - [11. Changelog](#11-changelog)
 
@@ -209,6 +210,23 @@ Isto porque:
 "Quando a função termina, todos os objetos criados nela desaparecem imediatamente."
 
 **Correção:** desaparecem referências locais do frame; o objeto só é removido se não houver outras referências.
+
+<a id="ponte-execucao-real"></a>
+
+## 9.1 Ponte para execução real do sistema
+
+Este módulo explica bem a execução no contexto do Python (bytecode + PVM + heap/stack).  
+Mas existe um nível mais abaixo: o sistema operativo e a CPU real.
+
+Resumo da ponte:
+
+- Python abstrai muito do detalhe;
+- no fim, a execução passa por instruções de máquina da arquitetura da CPU;
+- o sistema operativo trata de processo, carregamento e recursos.
+
+Para a visão completa "do código à execução real", consulta:
+
+- `Memoria/06_do_codigo_a_execucao_real_so_cpu_isa.md`
 
 ---
 

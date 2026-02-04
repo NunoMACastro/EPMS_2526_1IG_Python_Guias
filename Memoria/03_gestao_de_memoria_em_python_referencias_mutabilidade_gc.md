@@ -319,6 +319,15 @@ Conclusão prática:
 - Contagem de referências + Garbage Collector garantem limpeza.
 - Compreender referências evita muitos erros com listas e dicionários.
 
+### Ligação com o módulo 06
+
+No Python, estes mecanismos aparecem em alto nível (confortáveis para programar).  
+No nível do sistema, o processo continua a depender de CPU, sistema operativo e instruções de máquina.
+
+Para essa visão completa, consulta:
+
+- `Memoria/06_do_codigo_a_execucao_real_so_cpu_isa.md`
+
 ---
 
 ## 11. Changelog

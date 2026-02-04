@@ -268,7 +268,7 @@ Assim o processador e o software sabem exatamente como interpretar cada parte do
 
 ---
 
-## 7. Endereço de memória (visão simples)
+## 7. Endereço de memória
 
 Quando um dado está na memória, ele está numa posição específica.
 
@@ -281,6 +281,23 @@ Analogia:
 - Dado = pessoa que vive nessa casa.
 
 Sem endereço, o processador não sabe onde buscar o dado.
+
+### 7.1 Binário (dados) vs binário (instruções)
+
+Neste ponto convém fixar uma distinção muito importante:
+
+- o computador guarda **dados** em binário (texto, números, imagem, etc.);
+- a CPU executa **instruções** também em binário (código de máquina).
+
+Ou seja:
+
+- todo código de máquina é binário;
+- nem todo binário é código de máquina.
+
+Exemplo didático:
+
+- uma sequência pode representar a letra `A` (dado);
+- outra sequência pode representar "somar valores" (instrução da CPU).
 
 ---
 
