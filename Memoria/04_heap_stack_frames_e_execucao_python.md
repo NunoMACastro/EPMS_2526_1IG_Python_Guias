@@ -148,6 +148,7 @@ Analogia simples:
 
 ### 6.1 Diagrama sobre todo o processo usando Python
 
+```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ 1) PROGRAMADOR │
 │ Escreve código Python (.py) │
@@ -213,6 +214,7 @@ v
 │ Ou seja: o CPU "percebe" o teu programa Python porque executa │
 │ um programa (interpretador) que IMPLEMENTA o significado do Python. │
 └─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ## 7. Memória de execução: stack vs heap
 
